@@ -1,0 +1,23 @@
+plugins {
+    id 'application'
+    id 'checkstyle'
+}
+
+dependencies {
+    implementation 'com.github.HampusKalmar:Laboration-2-module:v1.1.4'
+}
+
+repositories {
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
+}
+
+checkstyle {
+    toolVersion = '8.38'
+    configFile = rootProject.file('config/checkstyle/google_checks.xml')
+    sourceSets= []
+}
+
+application {
+    mainClass = 'ezprojCLI.EzProj'
+}
