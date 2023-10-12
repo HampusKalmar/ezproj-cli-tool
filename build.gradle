@@ -5,6 +5,7 @@ plugins {
 
 dependencies {
     implementation 'com.github.HampusKalmar:Laboration-2-module:v1.1.4'
+    implementation 'info.picocli:picocli:4.7.5'
 }
 
 repositories {
