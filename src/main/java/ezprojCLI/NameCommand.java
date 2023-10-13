@@ -10,6 +10,6 @@ public class NameCommand implements Runnable {
 
     @Override
     public void run() {
-        System.out.println("Creating a project named " + name + " .");
+        System.out.println("Creating a project named " + name + "...");
     }
 }
