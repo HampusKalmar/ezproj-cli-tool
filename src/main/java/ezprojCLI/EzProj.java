@@ -1,7 +1,11 @@
 package ezprojCLI;
 
+import picocli.CommandLine;
+
 public class EzProj {
+
   public static void main(String[] args) {
-    System.out.println("Hello World!");
+    CommandLine commandLine = new CommandLine(new EzprojCommand());
+    commandLine.execute("-h");
   }
 }

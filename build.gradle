@@ -1,4 +1,5 @@
 plugins {
+    id 'java'
     id 'application'
     id 'checkstyle'
 }
@@ -21,4 +22,16 @@ checkstyle {
 
 application {
     mainClass = 'ezprojCLI.EzProj'
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'ezprojCLI.EzProj'
+    }
+}
+
+
+
+run {
+    standardInput = System.in
 }
