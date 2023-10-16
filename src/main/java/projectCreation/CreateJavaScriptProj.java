@@ -7,20 +7,29 @@ public class CreateJavaScriptProj {
   private ProjectGeneratorAPI projectGenerator = new ProjectGeneratorAPI();
   private ProcessBuilder process = new ProcessBuilder();
 
-  public void createJavaScriptDirectories() {
-    projectGenerator.createDirectory("/", "src");
-    projectGenerator.createDirectory("src/", "js");
-    projectGenerator.createDirectory("src/", "css");
+  private void createJavaScriptDirectories() {
+    try {
+      String[] directories = {"src", "src/.js", "src/css"};
+      for (String directory : directories) {
+        projectGenerator.createDirectory("/", directory);
+      }
+    } catch (Exception e) {
+      System.out.println("Error creating directories: " + e);
+    }
   }
 
-
-  public void createJavaScrippFiles() {
-    projectGenerator.createFileWithContent("/", "REAMDE.md", "Automatically generated README.md file.");
-    projectGenerator.createFileWithContent("src/", "index.html", "Automatically generated index.html file.");
-    projectGenerator.createFileWithContent("src/js/", "index.js", "Automatically generated main.js file.");
+  private void createJavaScriptFiles() {
+    try {
+      String[] files = {"README.md", "index.html", "index.js"};
+      for (String file : files) {
+        projectGenerator.createFileWithContent("/", file, "Automatic file creation by ezproj " + file);
+      }
+    } catch (Exception e) {
+      System.out.println("Error creating files: " + e);
+    }
   }
 
-  public void runNpm(String rootDirectory) {
+  private void runNpm(String rootDirectory) {
     String os = System.getProperty("os.name").toLowerCase();
     if (os.contains("win")) {
       process.command(rootDirectory, "cmd.exe", "/c", "npm init -y");
@@ -29,7 +38,13 @@ public class CreateJavaScriptProj {
     }
   }
 
-  public void buildProject() {
-    
+  private void buildProject() {
+    runNpm("/");
+  }
+
+  public void jsGenerator() {
+    createJavaScriptDirectories();
+    createJavaScriptFiles();
+    buildProject();
   }
 }

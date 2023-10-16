@@ -30,8 +30,8 @@ jar {
     }
 }
 
-
-
 run {
-    standardInput = System.in
+    doFirst {
+        println "Running ezprojCLI.EzProj"
+    }
 }
