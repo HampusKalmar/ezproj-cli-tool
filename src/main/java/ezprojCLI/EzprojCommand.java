@@ -2,14 +2,16 @@ package ezprojCLI;
 
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Option;
+import projectCreation.CreateJavaProj;
 import projectCreation.CreateJavaScriptProj;
 
-@Command(name = "ezproj", version = "ezproj 1.0.0", description = "Makes it easy to start new programming projects.", 
+@Command(name = "ezproj", description = "Makes it easy to start new programming projects.", 
 header = "Welcome to ezproj - the easy project starter.")
 public class EzprojCommand implements Runnable {
-  private CreateJavaScriptProj createJsProj = new CreateJavaScriptProj();
+  private CreateJavaScriptProj createJsProj;
+  private CreateJavaProj createJavaProj;
   
-  @Option(names = {"-v", "--version"}, description = "Print version information and exit.")
+  @Option(names = {"-v", "--version"}, description = "Print version info and exit.")
   private boolean versionRequested;
 
   @Option(names = {"-h", "--help"}, description = "Print this help message and exit.")
@@ -34,10 +36,14 @@ public class EzprojCommand implements Runnable {
       return;
     }
 
-    if (projectType.equals("JavaScript") && (projectName != null && projectName.isEmpty() == false)) {
+    if ("JavaScript".equals(projectType) && projectName != null) {
+      createJsProj = new CreateJavaScriptProj(projectName);
       createJsProj.jsGenerator();
-    } else {
-      System.out.println("Invalid project type. Please try again.");
+    }
+
+    if ("Java".equals(projectType) && projectName != null) {
+      createJavaProj = new CreateJavaProj(projectName);
+      createJavaProj.javaGenerator();
     }
   }
 }

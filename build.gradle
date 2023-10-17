@@ -21,7 +21,7 @@ checkstyle {
 }
 
 application {
-    mainClass = 'ezprojCLI.EzProj'
+    mainClassName = 'ezprojCLI.EzProj'
 }
 
 jar {

@@ -5,27 +5,35 @@ import java.lang.ProcessBuilder;
 
 public class CreateJavaScriptProj {
   private ProjectGeneratorAPI projectGenerator = new ProjectGeneratorAPI();
-  private ProcessBuilder process = new ProcessBuilder();
+  private final String BASE_DIRECTORY = System.getProperty("user.dir");
+  private ProcessBuilder process;
+  private String projectName;
+
+  public CreateJavaScriptProj(String projectName) {
+    if (projectName == null) {
+      throw new IllegalArgumentException("Project name cannot be null.");
+    }
+    this.projectName = projectName;
+  }
+
+  public void jsGenerator() {
+    createJavaScriptDirectories();
+    createJavaScriptFiles();
+    buildProject();
+  }
 
   private void createJavaScriptDirectories() {
-    try {
-      String[] directories = {"src", "src/.js", "src/css"};
-      for (String directory : directories) {
-        projectGenerator.createDirectory("/", directory);
-      }
-    } catch (Exception e) {
-      System.out.println("Error creating directories: " + e);
+    projectGenerator.createDirectory(BASE_DIRECTORY, projectName);
+    String[] directories = {"src", "src/js", "src/css"};
+    for (String directory : directories) {
+      projectGenerator.createDirectory(BASE_DIRECTORY + "/" + projectName, directory);
     }
   }
 
   private void createJavaScriptFiles() {
-    try {
-      String[] files = {"README.md", "index.html", "index.js"};
-      for (String file : files) {
-        projectGenerator.createFileWithContent("/", file, "Automatic file creation by ezproj " + file);
-      }
-    } catch (Exception e) {
-      System.out.println("Error creating files: " + e);
+    String[] files = {"README.md", ".gitignore", "src/index.html", "src/js/index.js", "src/css/style.css"};
+    for (String file : files) {
+      projectGenerator.createFileWithContent(BASE_DIRECTORY + "/" + projectName, file, "// Automatic file creation by ezproj.");
     }
   }
 
@@ -40,11 +48,5 @@ public class CreateJavaScriptProj {
 
   private void buildProject() {
     runNpm("/");
-  }
-
-  public void jsGenerator() {
-    createJavaScriptDirectories();
-    createJavaScriptFiles();
-    buildProject();
   }
 }
