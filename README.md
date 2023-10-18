@@ -38,7 +38,8 @@ In order to run ezproj from any location in your terminal, you need to add its l
 ### For macOS and Linux users:
 
     Open your terminal.
-    Edit the .bashrc file (or the appropriate profile file for your shell, e.g., .zshrc for Zsh) with a text editor of your choice. For example: nano ~/.bashrc.
+    Edit the .bashrc file (or the appropriate profile file for your shell, e.g., .zshrc for Zsh) 
+    with a text editor of your choice. For example: nano ~/.bashrc.
     Add the following line at the end of the file: export PATH=$PATH:/path_to_the_extracted_folder
     Save and close the text editor.
     Run source ~/.bashrc (or source ~/.zshrc for Zsh) to update the current terminal session.
