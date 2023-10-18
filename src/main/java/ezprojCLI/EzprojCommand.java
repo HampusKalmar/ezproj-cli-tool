@@ -36,12 +36,12 @@ public class EzprojCommand implements Runnable {
       return;
     }
 
-    if ("JavaScript".equals(projectType) && projectName != null) {
+    if ("javascript".equals(projectType) && projectName != null) {
       createJsProj = new CreateJavaScriptProj(projectName);
       createJsProj.jsGenerator();
     }
 
-    if ("Java".equals(projectType) && projectName != null) {
+    if ("java".equals(projectType) && projectName != null) {
       createJavaProj = new CreateJavaProj(projectName);
       createJavaProj.javaGenerator();
     }
