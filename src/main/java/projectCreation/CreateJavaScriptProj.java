@@ -12,7 +12,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Creates a JavaScript project.
+ * A class that have methods that builds a JavaScript project.
  */
 public class CreateJavaScriptProj {
   private ProjectGeneratorAPI projectGenerator = new ProjectGeneratorAPI();
