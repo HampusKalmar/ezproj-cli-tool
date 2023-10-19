@@ -5,6 +5,13 @@ import picocli.CommandLine.Option;
 import projectCreation.CreateJavaProj;
 import projectCreation.CreateJavaScriptProj;
 
+/**
+ * The `EzprojCommand` class provides command-line options for starting new programming projects
+ * easily using the 'ezproj' command.
+ *
+ * @author Hampus Tuisku
+ * @version 1.0.0
+ */
 @Command(name = "ezproj", description = "Makes it easy to start new programming projects.", 
 header = "Welcome to ezproj - the easy project starter.")
 public class EzprojCommand implements Runnable {
@@ -12,10 +19,10 @@ public class EzprojCommand implements Runnable {
   private CreateJavaProj createJavaProj;
   
   @Option(names = {"-v", "--version"}, description = "Print version info and exit.")
-  private boolean versionRequested;
+  private boolean isVersionRequested;
 
   @Option(names = {"-h", "--help"}, description = "Print this help message and exit.")
-  private boolean helpRequested;
+  private boolean isHelpRequested;
 
   @Option(names = {"-t", "--type"}, description = "The type of project to create.")
   private String projectType;
@@ -23,14 +30,17 @@ public class EzprojCommand implements Runnable {
   @Option(names = {"-n", "--name"}, description = "The name of the project.")
   private String projectName;
 
+  /**
+   * Executes the 'ezproj' command based on the provided options.
+   */
   @Override
   public void run() {
-    if (versionRequested) {
+    if (isVersionRequested) {
       System.out.println("ezproj 1.0.0");
       return;
     }
 
-    if (helpRequested) {
+    if (isHelpRequested) {
       System.out.println("To create a Java project: ezproj -t Java --name <project-name>");
       System.out.println("To create a JavaScript project: ezproj -t JavaScript --name <project-name>");
       return;
