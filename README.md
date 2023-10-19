@@ -1,5 +1,10 @@
 # ezproj cli tool
 
+## About 
+'ezproj' is a command line interface tool that provides the user to simply generate a Java or JavaScript project
+with the neccessary files and directorys to start with. Read more about how to set up 'ezproj' and how to use it
+down below.
+
 ## Version 1.0.0
 Check the version by running the following command in your terminal:
 ```bash
