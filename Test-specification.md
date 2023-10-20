@@ -1,6 +1,8 @@
 # Test specification
 
 ### Introduction
+The goal with this document is to specify the test cases for the cli-tool. The test cases are based
+on the issues that can be found on my GitHub page.
 
 ### Before you start
 Download the zip and install the cli-tool as described in the readme.md file.
