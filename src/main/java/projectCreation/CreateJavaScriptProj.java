@@ -35,10 +35,14 @@ public class CreateJavaScriptProj {
   /**
    * Instantiates the generation of the JavaScript project.
    */
-  public void jsGenerator() {
-    createJavaScriptDirectories();
-    createJavaScriptFiles();
-    runNpm(BASE_DIRECTORY + "/" + projectName);
+  public void jsGenerator() throws Exception {
+    try {
+      createJavaScriptDirectories();
+      createJavaScriptFiles();
+      runNpm(BASE_DIRECTORY + "/" + projectName);
+    } catch (Exception e) {
+      throw new Exception("Error while creating JavaScript project." + e.getMessage());
+    }
   }
 
   /**

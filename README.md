@@ -61,7 +61,11 @@ nano ~/.zshrc
 export PATH=$PATH:/path_to_the_extracted_folder
 ```
     5. Save and exit.
-    6. Apply the changes to the current session:
+    6. Make the script executable:
+```bash
+chmod +x ezproj
+```
+    7. Apply the changes to the current session:
 ```bash
 source ~/.bashrc
 or

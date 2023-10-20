@@ -41,19 +41,31 @@ public class EzprojCommand implements Runnable {
     }
 
     if (isHelpRequested) {
-      System.out.println("To create a Java project: ezproj -t Java --name <project-name>");
-      System.out.println("To create a JavaScript project: ezproj -t JavaScript --name <project-name>");
+      System.out.println("To create a project: ");
+      System.out.println("ezproj -t java -n <project-name>");
+      System.out.println("ezproj -t javascript -n <project-name>");
+      System.out.println("or");
+      System.out.println("ezproj --type java --name <project-name>");
+      System.out.println("ezproj --type javascript --name <project-name>");
       return;
     }
 
     if ("javascript".equals(projectType) && projectName != null) {
-      createJsProj = new CreateJavaScriptProj(projectName);
-      createJsProj.jsGenerator();
+      try {
+        createJsProj = new CreateJavaScriptProj(projectName);
+        createJsProj.jsGenerator();
+      } catch (Exception e) {
+        System.out.println(e.getMessage());
+      }
     }
 
     if ("java".equals(projectType) && projectName != null) {
-      createJavaProj = new CreateJavaProj(projectName);
-      createJavaProj.javaGenerator();
+      try {
+        createJavaProj = new CreateJavaProj(projectName);
+        createJavaProj.javaGenerator();
+      } catch (Exception e) {
+        System.out.println(e.getMessage());
+      }
     }
   }
 }

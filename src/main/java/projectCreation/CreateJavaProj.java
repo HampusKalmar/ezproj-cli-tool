@@ -25,9 +25,13 @@ public class CreateJavaProj {
   /**
    * Instantiates the generation of the Java project.
    */
-  public void javaGenerator() {
-    createJavaDirectories();
-    createJavaFiles();
+  public void javaGenerator() throws Exception {
+    try {
+      createJavaDirectories();
+      createJavaFiles();
+    } catch (Exception e) {
+      throw new Exception("Error while creating Java project." + e.getMessage());
+    }
   }
 
   /**
