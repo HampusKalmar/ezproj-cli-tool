@@ -43,23 +43,23 @@ In order to run ezproj from any location in your terminal, you need to add its l
     7. Click on OK to close all the windows.
 
 ### For macOS and Linux users:
-    1. After downloading the distribution.zip, extract it to your preferred location.
+    1. After downloading the distribution.zip, unzip and extract it to your preferred location.
     2. Open your terminal.
-    3. Edit shell profile:
+    3. Go to the directory where the extracted content is located and make the script executable:
+```bash
+chmod +x ezproj
+``` 
+    4. Open the .bashrc or .zshrc file:
 ```bash
 nano ~/.bashrc
 or
 nano ~/.zshrc
 ```
-    4. At the end of the file, add the following line:
+    5. At the end of the file, add the following line:
 ```bash
 export PATH=$PATH:/path_to_the_extracted_folder
 ```
-    5. Save and exit.
-    6. Make the script executable:
-```bash
-chmod +x ezproj
-```
+    6. Save and exit.
     7. Apply the changes to the current session:
 ```bash
 source ~/.bashrc

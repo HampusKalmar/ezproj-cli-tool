@@ -13,6 +13,9 @@ This report is based on the test cases that can be found in the test-specificati
 
 **ezproj version:** 1.0.0
 
+### Comment
+In all of the test cases, the cli-tool was installed and used on a Windows 11 system except for test case **6.2** and **6.3**, where the cli-tool was installed and used on macOS and Linux (ubuntu).
+
 ## Test case 1.0: Test version command.
 
 ### Result:
