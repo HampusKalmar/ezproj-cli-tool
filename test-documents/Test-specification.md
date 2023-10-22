@@ -9,21 +9,21 @@ Download the zip and install the cli-tool as described in the readme.md file.
 
 # Test cases
 
-## Test case 1: Test version command.
+## Test case 1.0: Test version command.
 ### Test steps:
 1. Open up the terminal
 2. Type in the command 'ezproj --version' and 'ezproj -h'.
 
 Expected result: The version of the cli-tool should be printed out in the terminal.
 
-## Test case 2: Test help command.
+## Test case 2.0: Test help command.
 ### Test steps:
 1. Open up the terminal
 2. Type in the command 'ezproj --help' and 'ezproj -h'.
 
 Expected result: The help menu should be printed out in the terminal.
 
-## Test case 3: Create Java project.
+## Test case 3.0: Create Java project.
 ### Test steps:
 1. Open up the terminal
 2. Go to a directory where you want to create the project.
@@ -31,7 +31,7 @@ Expected result: The help menu should be printed out in the terminal.
 
 Expected result: A new Java project should be created with a top directory with the given name.
 
-## Test case 4: Create JavaScript project.
+## Test case 4.0: Create JavaScript project.
 ### Test steps:
 1. Open up the terminal
 2. Go to a directory where you want to create the project.
@@ -39,7 +39,7 @@ Expected result: A new Java project should be created with a top directory with 
 
 Expected result: A new JavaScript project should be created with a top directory with the given name.
 
-## Test case 5: Error handling.
+## Test case 5.0: Error handling.
 ### Test steps:
 1. Open up the terminal
 2. Go to a directory where you want to create the project.
