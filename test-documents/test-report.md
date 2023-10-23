@@ -89,5 +89,5 @@ The test case failed. A project was created even though mixing long-form argumen
 | COVERAGE & SUCCESS | 2/OK |
 
 ### Conclusion:
-The test case passed on Windows and Linux but failed on macOS. The cli-tool was installed and used on a Windows 11 system except for test case **6.2** and **6.3**, where the cli-tool was installed and used on macOS and Linux (ubuntu). The cli-tool was able to create a project on Windows and Linux but not on macOS. I did not have time to investigate why it did not work on macOS.
+The test case passed on Windows and Linux but failed on macOS. The cli-tool was able to create a project on Windows and Linux but not on macOS. I did not have time to investigate why it did not work on macOS.
 
