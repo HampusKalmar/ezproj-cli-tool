@@ -71,7 +71,7 @@ The test case passed. A new JavaScript project was created with a top directory 
 
 | Test        | UC1  |
 |-------------|------|
-| TC5.0       | 1/FAIL |
+| TC5.0       | 0/FAIL |
 | COVERAGE & SUCCESS | 0/FAIL 
 
 ### Conclusion:
